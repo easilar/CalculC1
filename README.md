@@ -83,5 +83,7 @@ These results are obtained using 10k events, while the reference paper uses 500k
 |VBF | Value | Value|Value |Value|
 |tHj | Value | Value|Value |Value|
 ### TODO
-* Combine all the run scripts in to one script which takes the process name as an argument
+* Combine all the run scripts in to one script which takes the process name as an argument.
 Take care the process directory 
+* Run the framework with 500k events and update the result table accordingly 
+* Add script for pT binned calculation
