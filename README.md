@@ -73,5 +73,15 @@ MG5_aMC_v2_5_5]$ sh run_hw.sh
 By replacing hw in the name of run file you can run all other processes.
 Other processes that can be run hw,hz,ttH,tHj,vbf
 
-
-
+## Inclusive Results
+These results are obtained using 10k events, while the reference paper uses 500k events
+|process| <img src="https://render.githubusercontent.com/render/math?math=\sigma(LO)"> | <img src="https://render.githubusercontent.com/render/math?math=\sigma(O(\lambda_3))"> | C1(%) | C1(%) paper|
+|:---| :-----| :----|----: |:----|
+|HZ  | Value | Value|Value |Value|
+|HW  | Value | Value|Value |Value|
+|ttH | Value | Value|Value |Value|
+|VBF | Value | Value|Value |Value|
+|tHj | Value | Value|Value |Value|
+### TODO
+* Combine all the run scripts in to one script which takes the process name as an argument
+Take care the process directory 
