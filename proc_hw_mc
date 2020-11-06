@@ -1,0 +1,5 @@
+import model hhh-model-new
+generate p p > h w+ [LOonly= QCD]
+add process p p > h w- [LOonly= QCD]
+output hw_MC
+quit
