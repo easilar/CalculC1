@@ -8,18 +8,18 @@
 2. [paper](link)
 3. [paper](link)
 ## Preparation for runing
-###Creat working directory
+### Create working directory
 ```
 mkdir produce\_c1
 cd produce\_c1
 ```
-###Download necessary packages
+### Download necessary packages
 ```
 wget https://launchpad.net/mg5amcnlo/2.0/2.5.x/+download/MG5_aMC_v2.5.5.tar.gz
 wget http://www.feynarts.de/looptools/LoopTools-2.13.tar.gz
 wget https://cp3.irmp.ucl.ac.be/projects/madgraph/raw-attachment/wiki/HiggsSelfCoupling/trilinear-RW.tar.gz
 ```
-###Setup packages
+### Setup packages
 ```
 tar -xzf MG5_aMC_v2.5.5.tar.gz
 cd MG5_aMC_v2_5_5/
