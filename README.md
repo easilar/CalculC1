@@ -83,6 +83,7 @@ These results are obtained using 10k events, while the reference paper uses 500k
 |VBF | 30270.987 | 188.30949|0.622|0.63|
 |tHj | 388.926 | 3.9591|1.018 |0.91|
 ### TODO
+* Edit README: give paper names and proper links to papers
 * Combine all the run scripts in to one script which takes the process name as an argument.
 Take care the process directory 
 * Run the framework with 500k events and update the result table accordingly 
