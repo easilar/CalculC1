@@ -75,13 +75,13 @@ Other processes that can be run hw,hz,ttH,tHj,vbf
 
 ## Inclusive Results
 These results are obtained using 10k events, while the reference paper uses 500k events
-|process| <img src="https://render.githubusercontent.com/render/math?math=\sigma(LO)"> | <img src="https://render.githubusercontent.com/render/math?math=\sigma(O(\lambda_3))"> | C1(%) | C1(%) paper|
-|:---| :-----| :----|----: |:----|
-|HZ  | Value | Value|Value |Value|
-|HW  | Value | Value|Value |Value|
-|ttH | Value | Value|Value |Value|
-|VBF | Value | Value|Value |Value|
-|tHj | Value | Value|Value |Value|
+|process| <img src="https://render.githubusercontent.com/render/math?math=\sigma(LO)\cdot Nevents"> | <img src="https://render.githubusercontent.com/render/math?math=\sigma(O(\lambda_3))\cdot Nevents"> | C1(%) | C1(%) paper|
+|:---| :-----:| :----:|:----: |:----:|
+|HZ  | 6290.6464 | 75.3274|1.1975 |1.19|
+|HW  | 11625.76 | 119.1745|1.0250 |1.03|
+|ttH | 5404.128| 189.2334|3.5016 |3.52|
+|VBF | 30270.987 | 188.30949|0.622|0.63|
+|tHj | 388.926 | 3.9591|1.018 |0.91|
 ### TODO
 * Combine all the run scripts in to one script which takes the process name as an argument.
 Take care the process directory 
