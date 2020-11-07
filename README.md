@@ -3,10 +3,10 @@
 * [MadGraph v2_5_5](https://launchpad.net/mg5amcnlo)
 * [LoopTools v2_13 ](http://www.feynarts.de/looptools/)
 * [trilinear coupling package](https://cp3.irmp.ucl.ac.be/projects/madgraph/wiki/HiggsSelfCoupling#no1)
-## ReferenceReference Papers
-1. [paper](link)
-2. [paper](link)
-3. [paper](link)
+## References
+1. [paper_dummylink](link)
+2. [paper_dummylink](link)
+3. [STXS bins](https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHXSWGFiducialAndSTXS)
 ## Preparation for runing
 ### Create working directory
 ```
@@ -82,7 +82,28 @@ These results are obtained using 10k events, while the reference paper uses 500k
 |ttH | 5404.128| 189.2334|3.5016 |3.52|
 |VBF | 30270.987 | 188.30949|0.622|0.63|
 |tHj | 388.926 | 3.9591|1.018 |0.91|
+## Differential Results
+These results are obtained using 10k events.
+We currently applied the pT(H) cut in the Subprocess/cuts.f file.
+```
+do i=1,nexternal
+   if(istatus(i).eq.1 .and. ipdg(i).eq.25) then
+       if(pt_04(p(0,i)).lt.60 .or. pt_04(p(0,i)).gt.120) then
+          passcuts_user=.false.
+       endif
+   endif
+enddo
+```
+### ttH
+|pT(H)[GeV]| C1(%)|
+|:---:     |:----:|
+|0 - 60    |5.07  |
+|60 - 120  |4.07  |
+|120 - 200 |2.74  |
+|200 - 300 |1.52  |
+|>300      |0.58  |
 ### TODO
+(OZGUR yapacak)
 * Edit README: give paper names and proper links to papers
 * Combine all the run scripts in to one script which takes the process name as an argument.
 Take care the process directory 
