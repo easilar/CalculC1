@@ -3,10 +3,10 @@
 * [MadGraph v2_5_5](https://launchpad.net/mg5amcnlo)
 * [LoopTools v2_13 ](http://www.feynarts.de/looptools/)
 * [trilinear coupling package](https://cp3.irmp.ucl.ac.be/projects/madgraph/wiki/HiggsSelfCoupling#no1)
-## ReferenceReference Papers
-1. [paper](link)
-2. [paper](link)
-3. [paper](link)
+## References
+1. [paper_dummylink](link)
+2. [paper_dummylink](link)
+3. [STXS bins](https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHXSWGFiducialAndSTXS)
 ## Preparation for runing
 ### Create working directory
 ```
