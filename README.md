@@ -103,6 +103,7 @@ enddo
 |200 - 300 |1.52  |
 |>300      |0.58  |
 ### TODO
+(OZGUR yapacak)
 * Edit README: give paper names and proper links to papers
 * Combine all the run scripts in to one script which takes the process name as an argument.
 Take care the process directory 
