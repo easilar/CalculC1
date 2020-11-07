@@ -4,7 +4,7 @@
 * [LoopTools v2_13 ](http://www.feynarts.de/looptools/)
 * [trilinear coupling package](https://cp3.irmp.ucl.ac.be/projects/madgraph/wiki/HiggsSelfCoupling#no1)
 ## References
-1. [paper_dummylink](link)
+1. [Trilinear Higgs Coupling](https://arxiv.org/pdf/1709.08649.pdf)
 2. [paper_dummylink](link)
 3. [STXS bins](https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHXSWGFiducialAndSTXS)
 ## Preparation for runing
