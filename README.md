@@ -63,6 +63,8 @@ Now clone this repository to obtain running scripts
 
 ```
 MG5_aMC_v2_5_5]$ git clone https://github.com/easilar/CalculC1.git
+MG5_aMC_v2_5_5]$ mv CalculC1/proc_* .
+MG5_aMC_v2_5_5]$ mv CalculC1/run* .
 ```
 Now you are ready for runnign the trilinear-RW package
 
