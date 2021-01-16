@@ -1,4 +1,6 @@
 import model hhh-model-new
 generate p p > h j j $$ w+ w- z [LOonly=QCD]
-output vbf_MC
+display processes
+display diagrams
+output vbf_test_MC
 quit
