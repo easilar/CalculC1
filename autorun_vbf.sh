@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cp trilinear-RW/vvh-loop_diagram_generation.py madgraph/loop/loop_diagram_generation.py
 
 rm -r vbf_MC
@@ -17,6 +19,8 @@ sed -i -e 's/10.0  = ptj/20.0 = ptj/' vbf_MC/Cards/run_card.dat
 #sed -i -e 's/-1.0  = etaj/5.0  = etaj/' vbf_MC/Cards/run_card.dat
 #sed -i '136a\ 130.0 = mjj      ! minimum invariant mass of a jet pair' vbf_MC/Cards/run_card.dat
 
+
+"
 ./gevirt.sh vbf_MC/
 
 echo import model hhh-model-new > proc_vbf_me
@@ -65,7 +69,7 @@ gunzip Events/run_01_LO/events.lhe.gz Events/run_01_LO/events.lhe
 mv Events/run_01_LO/events.lhe ../vbf_ME/SubProcesses/
 
 cd ../vbf_ME/SubProcesses/
-./check_OLP
-
+./check_OLP | grep "C1:" > ../../result_vbf.txt
+"
 
 
