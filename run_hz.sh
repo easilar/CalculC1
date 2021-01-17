@@ -1,6 +1,6 @@
 ./bin/mg5_aMC < proc_hz_mc
 
-sed -i -e 's/10000 = nevents /800000 = nevents /' hz_MC/Cards/run_card.dat
+sed -i -e 's/10000 = nevents /1000 = nevents /' hz_MC/Cards/run_card.dat
 sed -i -e 's/nn23nlo = pdlabel/lhapdf = pdlabel/' hz_MC/Cards/run_card.dat
 sed -i -e 's/244600  = lhaid/90500  = lhaid/' hz_MC/Cards/run_card.dat
 sed -i -e 's/False    = fixed_ren_scale/True    = fixed_ren_scale/' hz_MC/Cards/run_card.dat

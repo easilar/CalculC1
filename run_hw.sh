@@ -1,12 +1,12 @@
 #Start readme in the mg5 directory
 #if the process tth
-cp trilinear-RW/tth-loop_diagram_generation.py madgraph/loop/loop_diagram_generation.py
+#cp trilinear-RW/tth-loop_diagram_generation.py madgraph/loop/loop_diagram_generation.py
 #if the process vbf, zh,wh, tHj
 cp trilinear-RW/vvh-loop_diagram_generation.py madgraph/loop/loop_diagram_generation.py
 
 ./bin/mg5_aMC < proc_hw_mc
 
-sed -i -e 's/10000 = nevents /10000 = nevents /' hw_MC/Cards/run_card.dat
+sed -i -e 's/10000 = nevents /1000 = nevents /' hw_MC/Cards/run_card.dat
 sed -i -e 's/nn23nlo = pdlabel/lhapdf = pdlabel/' hw_MC/Cards/run_card.dat
 sed -i -e 's/244600  = lhaid/90500  = lhaid/' hw_MC/Cards/run_card.dat
 sed -i -e 's/False    = fixed_ren_scale/True    = fixed_ren_scale/' hw_MC/Cards/run_card.dat
