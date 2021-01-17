@@ -1,6 +1,9 @@
+
+cp trilinear-RW/tth-loop_diagram_generation.py madgraph/loop/loop_diagram_generation.py
+
 ./bin/mg5_aMC < proc_ttH_mc
 
-sed -i -e 's/10000 = nevents /10000 = nevents /' ttH_MC/Cards/run_card.dat
+sed -i -e 's/10000 = nevents /500000 = nevents /' ttH_MC/Cards/run_card.dat
 sed -i -e 's/nn23nlo = pdlabel/lhapdf = pdlabel/' ttH_MC/Cards/run_card.dat
 sed -i -e 's/244600  = lhaid/90500  = lhaid/' ttH_MC/Cards/run_card.dat
 sed -i -e 's/False    = fixed_ren_scale/True    = fixed_ren_scale/' ttH_MC/Cards/run_card.dat
@@ -8,10 +11,8 @@ sed -i -e 's/False    = fixed_fac_scale/True    = fixed_fac_scale/' ttH_MC/Cards
 sed -i -e 's/91.118   = muR_ref_fixed/108.0938   = muR_ref_fixed/' ttH_MC/Cards/run_card.dat
 sed -i -e 's/91.118   = muF_ref_fixed/108.0938   = muF_ref_fixed/' ttH_MC/Cards/run_card.dat
 sed -i -e 's/False = store_rwgt_inf/True = store_rwgt_inf/' ttH_MC/Cards/run_card.dat
-sed -i -e 's/10.0  = ptj/20.0 = ptj/' ttH_MC/Cards/run_card.dat
-sed -i -e 's/-1.0  = etaj/5.0  = etaj/' ttH_MC/Cards/run_card.dat
-
-
+#sed -i -e 's/10.0  = ptj/20.0 = ptj/' ttH_MC/Cards/run_card.dat
+#sed -i -e 's/-1.0  = etaj/5.0  = etaj/' ttH_MC/Cards/run_card.dat
 
 ./gevirt.sh ttH_MC/
 
@@ -63,11 +64,3 @@ mv Events/run_01_LO/events.lhe ../ttH_ME/SubProcesses/
 cd ../ttH_ME/SubProcesses/
 ./check_OLP
 
-mv ttH_ME ttH_ME_60_120
-mv ttH_MC ttH_MC_60_120
-
-mv ttH_ME ttH_ME_200_300
-mv ttH_MC ttH_MC_200_300
-
-mv ttH_ME ttH_ME_300_gt
-mv ttH_MC ttH_MC_300_gt
