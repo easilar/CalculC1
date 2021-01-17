@@ -1,6 +1,8 @@
+cp trilinear-RW/vvh-loop_diagram_generation.py madgraph/loop/loop_diagram_generation.py
+
 ./bin/mg5_aMC < proc_vbf_mc
 
-sed -i -e 's/10000 = nevents /10000 = nevents /' vbf_MC/Cards/run_card.dat
+sed -i -e 's/10000 = nevents /1000 = nevents /' vbf_MC/Cards/run_card.dat
 sed -i -e 's/nn23nlo = pdlabel/lhapdf = pdlabel/' vbf_MC/Cards/run_card.dat
 sed -i -e 's/244600  = lhaid/90500  = lhaid/' vbf_MC/Cards/run_card.dat
 sed -i -e 's/False    = fixed_ren_scale/True    = fixed_ren_scale/' vbf_MC/Cards/run_card.dat

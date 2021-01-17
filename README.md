@@ -57,11 +57,14 @@ produce_c1]$ cd MG5_aMC_v2_5_5/
 MG5_aMC_v2_5_5]$ cp -r trilinear-RW/hhh-model/ models/hhh-model-new/
 MG5_aMC_v2_5_5]$ cp trilinear-RW/gevirt.sh .
 MG5_aMC_v2_5_5]$ cp trilinear-RW/vvh-loop_diagram_generation.py madgraph/loop/
+MG5_aMC_v2_5_5]$ cp trilinear-RW/tth-loop_diagram_generation.py madgraph/loop/
 ```
 Now clone this repository to obtain running scripts
 
 ```
 MG5_aMC_v2_5_5]$ git clone https://github.com/easilar/CalculC1.git
+MG5_aMC_v2_5_5]$ mv CalculC1/proc_* .
+MG5_aMC_v2_5_5]$ mv CalculC1/run* .
 ```
 Now you are ready for runnign the trilinear-RW package
 
