@@ -1,6 +1,7 @@
 #Library directories#
 #####################
-/HHH-Libs
+HHH-libs/*
+HHH-libs/
 *.a
 
 
