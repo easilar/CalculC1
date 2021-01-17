@@ -1,6 +1,11 @@
+cp trilinear-RW/vvh-loop_diagram_generation.py madgraph/loop/loop_diagram_generation.py
+
+rm -r tHj_MC
+rm -r tHj_ME
+
 ./bin/mg5_aMC < proc_tHj_mc
 
-sed -i -e 's/10000 = nevents /10000 = nevents /' tHj_MC/Cards/run_card.dat
+sed -i -e 's/10000 = nevents /500000 = nevents /' tHj_MC/Cards/run_card.dat
 sed -i -e 's/nn23nlo = pdlabel/lhapdf = pdlabel/' tHj_MC/Cards/run_card.dat
 sed -i -e 's/244600  = lhaid/90500  = lhaid/' tHj_MC/Cards/run_card.dat
 sed -i -e 's/False    = fixed_ren_scale/True    = fixed_ren_scale/' tHj_MC/Cards/run_card.dat
@@ -8,8 +13,24 @@ sed -i -e 's/False    = fixed_fac_scale/True    = fixed_fac_scale/' tHj_MC/Cards
 sed -i -e 's/91.118   = muR_ref_fixed/108.0938   = muR_ref_fixed/' tHj_MC/Cards/run_card.dat
 sed -i -e 's/91.118   = muF_ref_fixed/108.0938   = muF_ref_fixed/' tHj_MC/Cards/run_card.dat
 sed -i -e 's/False = store_rwgt_inf/True = store_rwgt_inf/' tHj_MC/Cards/run_card.dat
-#sed -i -e 's/10.0  = ptj/20.0 = ptj/' tHj_MC/Cards/run_card.dat
-#sed -i -e 's/-1.0  = etaj/5.0  = etaj/' tHj_MC/Cards/run_card.dat
+sed -i -e 's/10.0  = ptj/20.0 = ptj/' tHj_MC/Cards/run_card.dat
+sed -i -e 's/-1.0  = etaj/5.0  = etaj/' tHj_MC/Cards/run_card.dat
+
+#Pt cut for H. Mind the bins!
+
+#cp Compare_ttH/cuts.f tHj_MC/SubProcesses/cuts.f
+
+#sed -i '77a\c Pt cut for H' tHj_MC/SubProcesses/cuts.f
+#sed -i '78a\ ' tHj_MC/SubProcesses/cuts.f
+#sed -i '79a\       do i=1,nexternal' tHj_MC/SubProcesses/cuts.f
+#sed -i '80a\         if(istatus(i).eq.1 .and. ipdg(i).eq.25) then' tHj_MC/SubProcesses/cuts.f
+#sed -i '81a\           if(pt_04(p(0,i)).gt.0 .and. pt_04(p(0,i)).lt.350) then' tHj_MC/SubProcesses/cuts.f
+#sed -i '82a\             passcuts_user=.false.' tHj_MC/SubProcesses/cuts.f
+#sed -i '83a\	       endif' tHj_MC/SubProcesses/cuts.f
+#sed -i '84a\         endif' tHj_MC/SubProcesses/cuts.f
+#sed -i '85a\       enddo' tHj_MC/SubProcesses/cuts.f
+#sed -i '86a\' tHj_MC/SubProcesses/cuts.f
+
 
 ./gevirt.sh tHj_MC/
 
