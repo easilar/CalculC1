@@ -2,6 +2,7 @@
 
 bin1=$1
 bin2=$2
+nevents=$3
 
 cp trilinear-RW/vvh-loop_diagram_generation.py madgraph/loop/loop_diagram_generation.py
 
@@ -17,7 +18,7 @@ sed 's/output hz_MC/output '"$cur_dir"'/g' proc_hz_mc > proc_hz_mc_"$bin1"_"$bin
 
 ./bin/mg5_aMC < proc_hz_mc_"$bin1"_"$bin2"
 
-sed -i -e 's/10000 = nevents /10000 = nevents /' $cur_dir/Cards/run_card.dat
+sed -i -e "s/10000 = nevents /$nevents = nevents /" $cur_dir/Cards/run_card.dat
 sed -i -e 's/nn23nlo = pdlabel/lhapdf = pdlabel/' $cur_dir/Cards/run_card.dat
 sed -i -e 's/244600  = lhaid/90500  = lhaid/' $cur_dir/Cards/run_card.dat
 sed -i -e 's/False    = fixed_ren_scale/True    = fixed_ren_scale/' $cur_dir/Cards/run_card.dat
