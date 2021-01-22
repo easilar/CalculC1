@@ -4,9 +4,12 @@
 * [LoopTools v2_13 ](http://www.feynarts.de/looptools/)
 * [trilinear coupling package](https://cp3.irmp.ucl.ac.be/projects/madgraph/wiki/HiggsSelfCoupling#no1)
 ## References
-1. [Trilinear Higgs Coupling](https://arxiv.org/pdf/1709.08649.pdf)
-2. [paper_dummylink](link)
-3. [STXS bins](https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHXSWGFiducialAndSTXS)
+1. [Trilinear Higgs coupling determination via single-Higgs via differential measurements at the LHC](https://arxiv.org/pdf/1709.08649.pdf)
+2. [Probing the Higgs self coupling via single Higgs production at the LHC](https://arxiv.org/pdf/1607.04251.pdf)
+3. [Probing Trilinear Higgs Self–coupling at the HL-LHC](https://arxiv.org/pdf/1908.00753.pdf)
+4. [Probing the trilinear Higgs boson self-coupling via single Higgs production at the LHeC](https://arxiv.org/pdf/1910.09424.pdf)
+5. [Constraint of the Higgs boson self-coupling from Higgs boson differential production and decay measurements](https://cds.cern.ch/record/2667570/files/ATL-PHYS-PUB-2019-009.pdf)
+6. [STXS bins](https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHXSWGFiducialAndSTXS)
 ## Preparation for runing
 ### Create working directory
 ```
