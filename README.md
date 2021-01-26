@@ -88,6 +88,16 @@ These results are obtained using 10k events, while the reference paper uses 500k
 |ttH | 5404.128| 189.2334|3.5016 |3.52|
 |VBF | 30270.987 | 188.30949|0.622|0.63|
 |tHj | 388.926 | 3.9591|1.018 |0.91|
+
+Following results are obtained using 500k events.
+|process| C1(%) | C1(%) paper|
+|:-----:|:-----:|:----------:| 
+|  HZ   | 1.19  |    1.19    |
+|  HW   | 1.03  |    1.03    |
+|  ttH  | 3.47  |    3.52    |
+|  VBF  | 0.62  |    0.63    |
+|  tHj  | 0.97  |    0.91    |
+
 ## Differential Results
 These results are obtained using 10k events.
 We currently applied the pT(H) cut in the Subprocess/cuts.f file.
