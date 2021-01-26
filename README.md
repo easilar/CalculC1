@@ -4,9 +4,12 @@
 * [LoopTools v2_13 ](http://www.feynarts.de/looptools/)
 * [trilinear coupling package](https://cp3.irmp.ucl.ac.be/projects/madgraph/wiki/HiggsSelfCoupling#no1)
 ## References
-1. [Trilinear Higgs Coupling](https://arxiv.org/pdf/1709.08649.pdf)
-2. [paper_dummylink](link)
-3. [STXS bins](https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHXSWGFiducialAndSTXS)
+1. [Trilinear Higgs coupling determination via single-Higgs via differential measurements at the LHC](https://arxiv.org/pdf/1709.08649.pdf)
+2. [Probing the Higgs self coupling via single Higgs production at the LHC](https://arxiv.org/pdf/1607.04251.pdf)
+3. [Probing Trilinear Higgs Self–coupling at the HL-LHC](https://arxiv.org/pdf/1908.00753.pdf)
+4. [Probing the trilinear Higgs boson self-coupling via single Higgs production at the LHeC](https://arxiv.org/pdf/1910.09424.pdf)
+5. [Constraint of the Higgs boson self-coupling from Higgs boson differential production and decay measurements](https://cds.cern.ch/record/2667570/files/ATL-PHYS-PUB-2019-009.pdf)
+6. [STXS bins](https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHXSWGFiducialAndSTXS)
 ## Preparation for runing
 ### Create working directory
 ```
@@ -97,14 +100,28 @@ do i=1,nexternal
    endif
 enddo
 ```
+The below results for STXS bins are obtained with 500k events.
 ### ttH
 |pT(H)[GeV]| C1(%)|
 |:---:     |:----:|
-|0 - 60    |5.07  |
-|60 - 120  |4.07  |
-|120 - 200 |2.74  |
+|0 - 60    |5.01  |
+|60 - 120  |4.05  |
+|120 - 200 |2.73  |
 |200 - 300 |1.52  |
-|>300      |0.58  |
+|300 - 450 |0.72  |
+|>450      |0.23  |
+### HZ
+|pT(Z)[GeV]| C1(%)|
+|:---:     |:----:|
+|0 - 75    |1.64  |
+|75 - 150  |0.80  |
+|>150      |0.14  |
+### HW
+|pT(W)[GeV]| C1(%)|
+|:---:     |:----:|
+|0 - 75    |1.41  |
+|75 - 150  |0.69  |
+|>150      |0.12  |
 ### TODO
 (OZGUR yapacak)
 * Edit README: give paper names and proper links to papers
