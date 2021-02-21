@@ -96,7 +96,7 @@ Following results are obtained using 500k events.
 |  HW   | 1.03  |    1.03    |
 |  ttH  | 3.52  |    3.52    |
 |  VBF  | 0.62  |    0.63    |
-|  tHj  | 0.97  |    0.91    |
+|  tHj  | 0.95  |    0.91    |
 
 ## Differential Results
 These results are obtained using 10k events.
@@ -120,6 +120,15 @@ The below results for STXS bins are obtained with 500k events.
 |200 - 300 |1.52  |
 |300 - 450 |0.72  |
 |>450      |0.22  |
+### tHj
+|pT(H)[GeV]| C1(%)|
+|:---:     |:----:|
+|0 - 60    |1.23  |
+|60 - 120  |1.01  |
+|120 - 200 |0.72  |
+|200 - 300 |0.42  |
+|300 - 450 |0.18  |
+|>450      |0.02  |
 ### HZ
 |pT(Z)[GeV]| C1(%)|
 |:---:     |:----:|
