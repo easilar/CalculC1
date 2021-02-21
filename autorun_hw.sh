@@ -10,8 +10,8 @@ sed -i -e 's/nn23nlo = pdlabel/lhapdf = pdlabel/' hw_MC/Cards/run_card.dat
 sed -i -e 's/244600  = lhaid/90500  = lhaid/' hw_MC/Cards/run_card.dat
 sed -i -e 's/False    = fixed_ren_scale/True    = fixed_ren_scale/' hw_MC/Cards/run_card.dat
 sed -i -e 's/False    = fixed_fac_scale/True    = fixed_fac_scale/' hw_MC/Cards/run_card.dat
-sed -i -e 's/91.118   = muR_ref_fixed/108.0938   = muR_ref_fixed/' hw_MC/Cards/run_card.dat
-sed -i -e 's/91.118   = muF_ref_fixed/108.0938   = muF_ref_fixed/' hw_MC/Cards/run_card.dat
+sed -i -e 's/91.118   = muR_ref_fixed/102.693   = muR_ref_fixed/' hw_MC/Cards/run_card.dat
+sed -i -e 's/91.118   = muF_ref_fixed/102.693   = muF_ref_fixed/' hw_MC/Cards/run_card.dat
 sed -i -e 's/False = store_rwgt_inf/True = store_rwgt_inf/' hw_MC/Cards/run_card.dat
 #sed -i -e 's/10.0  = ptj/20.0 = ptj/' hw_MC/Cards/run_card.dat
 #sed -i -e 's/-1.0  = etaj/5.0  = etaj/' hw_MC/Cards/run_card.dat
