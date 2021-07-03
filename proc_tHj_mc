@@ -1,0 +1,6 @@
+import model hhh-model-new
+generate p p > t h j  [LOonly= QCD]
+add process p p > t~ h j [LOonly= QCD]
+output tHj_MC
+quit
+
