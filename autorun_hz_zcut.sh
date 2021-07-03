@@ -107,4 +107,8 @@ mv Events/run_01_LO/events.lhe ../$cur_dir_me/SubProcesses/
 cd ../$cur_dir_me/SubProcesses/
 ./check_OLP | grep "C1:" > ../../result_hz_"$bin1"_"$bin2".txt 
 
+cd ../..
+
+mv  $cur_dir /tmp/odurmus/$cur_dir
+mv  $cur_dir_me /tmp/odurmus/$cur_dir_me
 

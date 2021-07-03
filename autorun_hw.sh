@@ -5,7 +5,7 @@ rm -r hw_ME
 
 ./bin/mg5_aMC < proc_hw_mc
 
-sed -i -e 's/10000 = nevents /500000 = nevents /' hw_MC/Cards/run_card.dat
+sed -i -e 's/10000 = nevents /10000 = nevents /' hw_MC/Cards/run_card.dat
 sed -i -e 's/nn23nlo = pdlabel/lhapdf = pdlabel/' hw_MC/Cards/run_card.dat
 sed -i -e 's/244600  = lhaid/90500  = lhaid/' hw_MC/Cards/run_card.dat
 sed -i -e 's/False    = fixed_ren_scale/True    = fixed_ren_scale/' hw_MC/Cards/run_card.dat
@@ -13,6 +13,8 @@ sed -i -e 's/False    = fixed_fac_scale/True    = fixed_fac_scale/' hw_MC/Cards/
 sed -i -e 's/91.118   = muR_ref_fixed/102.693   = muR_ref_fixed/' hw_MC/Cards/run_card.dat
 sed -i -e 's/91.118   = muF_ref_fixed/102.693   = muF_ref_fixed/' hw_MC/Cards/run_card.dat
 sed -i -e 's/False = store_rwgt_inf/True = store_rwgt_inf/' hw_MC/Cards/run_card.dat
+sed -i -e 's/# exrootanalysis_path = ./ExRootAnalysis/# exrootanalysis_path = /afs/cern.ch/work/o/odurmus/produce_c1/MG5_aMC_v2_5_5/ExRootAnalysis/' hw_MC/Cards/amcatnlo_configuration.txt
+#sed -i -e 's/10.0  = ptj/20.0 = ptj/' hw_MC/Cards/run_card.dat
 #sed -i -e 's/10.0  = ptj/20.0 = ptj/' hw_MC/Cards/run_card.dat
 #sed -i -e 's/-1.0  = etaj/5.0  = etaj/' hw_MC/Cards/run_card.dat
 
@@ -71,6 +73,7 @@ cd hw_MC/
 
 echo order=LO > genEv_hw_mc
 echo shower=OFF >> genEv_hw_mc
+echo analysis=EXROOTANALYSIS >> genEv_hw_mc
 
 ./bin/generate_events < genEv_hw_mc
 

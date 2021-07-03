@@ -1,4 +1,0 @@
-import model hhh-model-new
-generate p p > h z [LOonly= QCD]
-output hz_MC
-quit
