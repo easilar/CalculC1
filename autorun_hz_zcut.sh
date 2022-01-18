@@ -20,7 +20,7 @@ sed 's/output hz_MC/output '"$cur_dir"'/g' proc_hz_mc > proc_hz_mc_"$bin1"_"$bin
 
 sed -i -e "s/10000 = nevents /$nevents = nevents /" $cur_dir/Cards/run_card.dat
 sed -i -e 's/nn23nlo = pdlabel/lhapdf = pdlabel/' $cur_dir/Cards/run_card.dat
-sed -i -e 's/244600  = lhaid/90500  = lhaid/' $cur_dir/Cards/run_card.dat
+sed -i -e 's/244600  = lhaid/90000  = lhaid/' $cur_dir/Cards/run_card.dat
 sed -i -e 's/False    = fixed_ren_scale/True    = fixed_ren_scale/' $cur_dir/Cards/run_card.dat
 sed -i -e 's/False    = fixed_fac_scale/True    = fixed_fac_scale/' $cur_dir/Cards/run_card.dat
 sed -i -e 's/91.118   = muR_ref_fixed/108.0938   = muR_ref_fixed/' $cur_dir/Cards/run_card.dat
@@ -105,10 +105,12 @@ gunzip Events/run_01_LO/events.lhe.gz Events/run_01_LO/events.lhe
 mv Events/run_01_LO/events.lhe ../$cur_dir_me/SubProcesses/
 
 cd ../$cur_dir_me/SubProcesses/
-./check_OLP | grep "C1:" > ../../result_hz_"$bin1"_"$bin2".txt 
+./check_OLP | grep -B 2 "C1:" > ../../result_hz_"$bin1"_"$bin2".txt 
+#./check_OLP | grep "SUM OF ORIGINAL WEIGHTS:" >> ../../result_hz_"$bin1"_"$bin2".txt 
+#./check_OLP | grep "SUM OF NEW WEIGHTS:" >> ../../result_hz_"$bin1"_"$bin2".txt
 
 cd ../..
 
-mv  $cur_dir /tmp/odurmus/$cur_dir
-mv  $cur_dir_me /tmp/odurmus/$cur_dir_me
+#mv  $cur_dir /tmp/odurmus/$cur_dir
+#mv  $cur_dir_me /tmp/odurmus/$cur_dir_me
 
