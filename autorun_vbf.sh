@@ -12,18 +12,22 @@ sed -i -e 's/nn23nlo = pdlabel/lhapdf = pdlabel/' vbf_MC/Cards/run_card.dat
 sed -i -e 's/244600  = lhaid/90500  = lhaid/' vbf_MC/Cards/run_card.dat
 sed -i -e 's/False    = fixed_ren_scale/True    = fixed_ren_scale/' vbf_MC/Cards/run_card.dat
 sed -i -e 's/False    = fixed_fac_scale/True    = fixed_fac_scale/' vbf_MC/Cards/run_card.dat
-sed -i -e 's/91.118   = muR_ref_fixed/41.7   = muR_ref_fixed/' vbf_MC/Cards/run_card.dat
-sed -i -e 's/91.118   = muF_ref_fixed/41.7   = muF_ref_fixed/' vbf_MC/Cards/run_card.dat
+sed -i -e 's/91.118   = muR_ref_fixed/62.5   = muR_ref_fixed/' vbf_MC/Cards/run_card.dat
+sed -i -e 's/91.118   = muF_ref_fixed/62.5   = muF_ref_fixed/' vbf_MC/Cards/run_card.dat
 sed -i -e 's/False = store_rwgt_inf/True = store_rwgt_inf/' vbf_MC/Cards/run_card.dat
 sed -i -e 's/10.0  = ptj/20.0 = ptj/' vbf_MC/Cards/run_card.dat
 sed -i -e 's/-1.0  = etaj/5.0  = etaj/' vbf_MC/Cards/run_card.dat
+sed -i -e 's/HERWIG6   = parton_shower/PYTHIA8   = parton_shower/' vbf_MC/Cards/run_card.dat
 #sed -i '136a\ 130.0 = mmjj      ! minimum invariant mass of a jet pair' vbf_MC/Cards/run_card.dat
+sed -i '5a\  ' vbf_MC/Cards/ident_card.dat
+sed -i '6a\ sminputs 1 1/alpha_EW' vbf_MC/Cards/ident_card.dat
 
 
 
 ./gevirt.sh vbf_MC/
 
 echo import model hhh-model-new > proc_vbf_me
+echo set complex_mass_scheme >> proc_vbf_me
 cat proc_ml >> proc_vbf_me
 echo output vbf_ME >> proc_vbf_me
 echo collier noinstall >> proc_vbf_me
@@ -66,8 +70,8 @@ cd vbf_MC/
 
 echo order=LO > genEv_vbf_mc
 echo shower=OFF >> genEv_vbf_mc
-echo update dependent >> genEv_vbf_mc
-echo update missing >> genEv_vbf_mc
+#echo update dependent >> genEv_vbf_mc
+#echo update missing >> genEv_vbf_mc
 
 ./bin/generate_events < genEv_vbf_mc
 
