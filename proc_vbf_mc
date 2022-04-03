@@ -1,4 +1,7 @@
 import model hhh-model-new
-generate p p > h j j [LOonly=QCD]
+set complex_mass_scheme
+generate p p > h $$ w+ w- z [LOonly=QCD]  
+generate p p > h j $$ w+ w- z [LOonly=QCD]  
+generate p p > h j j $$ w+ w- z [LOonly=QCD]  
 output vbf_MC
 quit

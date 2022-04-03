@@ -1,6 +1,6 @@
 import model hhh-model-new
-generate p p > t h j  [LOonly= QCD]
-add process p p > t~ h j [LOonly= QCD]
+generate p p > t h j \$\$ w+ w-  [LOonly= QCD]
+add process p p > t~ h j \$\$ w+ w- [LOonly= QCD]
 output tHj_MC
 quit
 

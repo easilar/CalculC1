@@ -1,10 +1,16 @@
 #!/bin/bash
 
+#Input parameters defined: lower(upper) bound of the PT bin as bin1 (bin2), number of events as nevents
+
 bin1=$1
 bin2=$2
 nevents=$3
 
+#Relevant loop diagram generation script is copied. Note that the one for ttH is different.
+
 cp trilinear-RW/vvh-loop_diagram_generation.py madgraph/loop/loop_diagram_generation.py
+
+#Output files are defined
 
 cur_dir=hw_mc_"$bin1"_"$bin2"
 cur_dir_me=hw_me_"$bin1"_"$bin2"
@@ -18,6 +24,8 @@ sed 's/output hw_MC/output '"$cur_dir"'/g' proc_hw_mc > proc_hw_mc_"$bin1"_"$bin
 
 ./bin/mg5_aMC < proc_hw_mc_"$bin1"_"$bin2"
 
+#Necessary modifications to the Cards are done.
+
 sed -i -e "s/10000 = nevents /$nevents = nevents /" $cur_dir/Cards/run_card.dat
 sed -i -e 's/nn23nlo = pdlabel/lhapdf = pdlabel/' $cur_dir/Cards/run_card.dat
 sed -i -e 's/244600  = lhaid/90500  = lhaid/' $cur_dir/Cards/run_card.dat
@@ -29,12 +37,13 @@ sed -i -e 's/False = store_rwgt_inf/True = store_rwgt_inf/' $cur_dir/Cards/run_c
 #sed -i -e 's/10.0  = ptj/20.0 = ptj/' $cur_dir/Cards/run_card.dat
 #sed -i -e 's/-1.0  = etaj/5.0  = etaj/' $cur_dir/Cards/run_card.dat
 
-echo "run card manipule edildi"
+#echo "run card manipule edildi"
 
 #Pt cut for with bins. Mind the bins!
 
 # Mind the folder paths!
 
+#PT cut is defined. Note that the cuts are put on different particles in STXS bins. Careful when merging the code into one!
 
 sed -i '77a\c Pt cut for W' $cur_dir/SubProcesses/cuts.f
 sed -i '78a\ ' $cur_dir/SubProcesses/cuts.f
@@ -68,6 +77,8 @@ echo quit >> proc_hw_me_"$bin1"_"$bin2"
 
 ./bin/mg5_aMC < proc_hw_me_"$bin1"_"$bin2"
 
+#Following the Readme file of Trilinear-RW
+
 cd $cur_dir_me/SubProcesses/
 cp ../../trilinear-RW/makefile .
 cp ../../trilinear-RW/check_OLP.f .
@@ -95,9 +106,11 @@ make check_OLP
 cd ../../
 cd $cur_dir/
 
+#No shower for hw. tHj and VBF will need it.
+
 echo order=LO > genEv_hw_mc
 echo shower=OFF >> genEv_hw_mc
-echo analysis=EXROOTANALYSIS >> genEv_hw_mc
+echo analysis=EXROOTANALYSIS >> genEv_hw_mc #we don't use the analysis feature so no need to add actually. We do this stand alone.
 
 ./bin/generate_events < genEv_hw_mc
 
@@ -107,6 +120,8 @@ mv Events/run_01_LO/events.lhe ../$cur_dir_me/SubProcesses/
 
 cd ../$cur_dir_me/SubProcesses/
 ./check_OLP | grep -B 2 "C1:" > ../../result_hw_"$bin1"_"$bin2".txt
+
+#Below part is necessary for the storage space shortage. Especially when the calculations are done in parallel in STXS bins.
 
 cd ../..
 
